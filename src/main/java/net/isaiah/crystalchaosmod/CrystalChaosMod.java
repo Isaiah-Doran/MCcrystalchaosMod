@@ -1,6 +1,8 @@
 package net.isaiah.crystalchaosmod;
 
 import com.mojang.logging.LogUtils;
+import net.isaiah.crystalchaosmod.item.Moditems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -32,10 +34,10 @@ public class CrystalChaosMod
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        Moditems.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -52,6 +54,9 @@ public class CrystalChaosMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(Moditems.BLUE_MANA_CRYSTAL);
+        }
 
     }
 
