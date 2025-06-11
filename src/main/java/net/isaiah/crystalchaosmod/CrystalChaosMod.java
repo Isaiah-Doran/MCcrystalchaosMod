@@ -56,6 +56,7 @@ public class CrystalChaosMod
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(Moditems.BLUE_MANA_CRYSTAL);
+            event.accept(Moditems.RED_MANA_CRYSTAL);
         }
 
     }

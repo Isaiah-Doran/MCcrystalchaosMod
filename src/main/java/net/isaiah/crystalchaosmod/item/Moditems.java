@@ -13,6 +13,8 @@ public class Moditems {
 
     public static final RegistryObject<Item> BLUE_MANA_CRYSTAL = ITEMS.register("bluemanacrystal",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RED_MANA_CRYSTAL = ITEMS.register("redmanacrystal",
+            () -> new Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus){
